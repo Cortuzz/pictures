@@ -50,13 +50,15 @@ struct VectorizedPicturesMergingAlgorithm:PicturesMergingAlgorithm {
     const int CHUNK_SIZE = 32;
 
     void plusPictures() override {
+        omp_set_num_threads(16);
         
-        #pragma omp parallel for private(i)
-        for (int i = 0; i < size; i += CHUNK_SIZE) {
-            __m256i v1 = _mm256_load_si256((__m256i*)&firstPicture[i]);
-            __m256i v2 = _mm256_load_si256((__m256i*)&secondPicture[i]);
+        int i;
+        #pragma omp parallel for private(i) 
+        for (i = 0; i < size; i += CHUNK_SIZE) {
+            __m256i v1 = _mm256_load_si256((__m256i*) & firstPicture[i]);
+            __m256i v2 = _mm256_load_si256((__m256i*) & secondPicture[i]);
             __m256i reg = _mm256_adds_epu8(v1, v2);
-            _mm256_store_si256((__m256i*)&resultPicture[i], reg);
+            _mm256_store_si256((__m256i*) & resultPicture[i], reg);
         }
     }
 
@@ -89,24 +91,17 @@ struct VectorizedPicturesMergingAlgorithm:PicturesMergingAlgorithm {
 //        }
     }
 };
-
+        
 struct DefaultPicturesMergingAlgorithm:PicturesMergingAlgorithm {
     void plusPictures() override {
-        omp_set_num_threads(2);
-            
+        omp_set_num_threads(16);
+
         int i;
         #pragma omp parallel for private(i) 
-        {
-            for (i = 0; i < size / 2; i++) {
-                resultPicture[i] = ((firstPicture[i] + secondPicture[i] > 255) ? 255 : firstPicture[i] + secondPicture[i]);
-            }
+        for (i = 0; i < size; i++) {
+            resultPicture[i] = ((firstPicture[i] + secondPicture[i] > 255) ? 255 : firstPicture[i] + secondPicture[i]);
         }
-        #pragma omp parallel for private(i) 
-        {
-            for (i = size / 2; i < size; i++) {
-                resultPicture[i] = ((firstPicture[i] + secondPicture[i] > 255) ? 255 : firstPicture[i] + secondPicture[i]);
-            }
-        }
+      
     }
 
     void minusPictures() override {
