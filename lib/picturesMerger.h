@@ -47,8 +47,15 @@ public:
 };
 
 struct VectorizedPicturesMergingAlgorithm:PicturesMergingAlgorithm {
+private:
     const int CHUNK_SIZE = 32;
-
+    unsigned long long _fullData[8]{ -1, -1, -1, -1, -1, -1, -1, -1 };
+	unsigned long long _01Data[8]{ 0x0202020202020202,0x0202020202020202,0x0202020202020202,0x0202020202020202,0x0202020202020202,0x0202020202020202,0x0202020202020202,0x0202020202020202 };
+	const __m256i reg256i255 = _mm256_loadu_epi64(&_fullData);
+	const __m256i reg256i2 = _mm256_loadu_epi64(_01Data);
+	const __m256i reg256i127 = _mm256_div_epu8(reg256i255, reg256i2);
+    
+public:
     void plusPictures() override {
         omp_set_num_threads(16);
         
@@ -69,6 +76,24 @@ struct VectorizedPicturesMergingAlgorithm:PicturesMergingAlgorithm {
             __m256i reg = _mm256_subs_epu8(v1, v2);
             _mm256_store_si256((__m256i*)&resultPicture[i], reg);
         }
+    }
+    
+    void gainExtractPictures() override {
+		for (i = 0; i < resultLength; i += 32) {
+			__m256i v1 = _mm256_load_si256((__m256i*)&image1[i]);
+			__m256i v2 = _mm256_load_si256((__m256i*)&image2[i]);
+			__m256i reg = _mm256_subs_epu8(_mm256_adds_epu8(v1, v2), reg256i127);
+			_mm256_store_si256((__m256i*) & result[i], reg);
+		}
+    }
+    
+    void gainMergePictures() override {
+		for (i = 0; i < resultLength; i += 32) {
+			__m256i v1 = _mm256_load_si256((__m256i*)&image1[i]);
+			__m256i v2 = _mm256_load_si256((__m256i*)&image2[i]);
+			__m256i reg = _mm256_adds_epu8(_mm256_subs_epu8(v1, v2), reg256i127);
+			_mm256_store_si256((__m256i*) & result[i], reg);
+		}
     }
 };
         
