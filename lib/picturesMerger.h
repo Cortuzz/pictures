@@ -70,26 +70,6 @@ struct VectorizedPicturesMergingAlgorithm:PicturesMergingAlgorithm {
             _mm256_store_si256((__m256i*)&resultPicture[i], reg);
         }
     }
-
-    void gainExtractPictures() override {
-        throw std::exception();
-//        for (int i = 0; i < size; i += CHUNK_SIZE) {
-//            __m256i v1 = _mm256_load_si256((__m256i*)&firstPicture[i]);
-//            __m256i v2 = _mm256_load_si256((__m256i*)&secondPicture[i]);
-//            __m256i reg = _mm256_sub_epi8(_mm256_add_epi8(v1, v2), ...);
-//            _mm256_store_si256((__m256i*)&resultPicture[i], reg);
-//        }
-    }
-
-    void gainMergePictures() override {
-        throw std::exception();
-//        for (int i = 0; i < size; i += CHUNK_SIZE) {
-//            __m256i x = _mm256_load_si256((__m256i*)&firstPicture[i]);
-//            __m256i y = _mm256_load_si256((__m256i*)&secondPicture[i]);
-//            __m256i z = _mm256_subs_epu8(x, y);
-//            _mm256_store_si256((__m256i*)&resultPicture[i], z);
-//        }
-    }
 };
         
 struct DefaultPicturesMergingAlgorithm:PicturesMergingAlgorithm {
