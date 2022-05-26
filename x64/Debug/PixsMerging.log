@@ -1,0 +1,29 @@
+﻿  lodepng.cpp
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(692,59): warning C4334: <<: результат 32-разрядного смещения неявно преобразуется в 64-разрядное значение (предполагалось 64-разрядное смещение?)
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(710,39): warning C4267: =: преобразование из "size_t" в "unsigned short"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(711,43): warning C4334: <<: результат 32-разрядного смещения неявно преобразуется в 64-разрядное значение (предполагалось 64-разрядное смещение?)
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(734,45): warning C4267: =: преобразование из "size_t" в "unsigned short"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(752,46): warning C4267: =: преобразование из "size_t" в "unsigned short"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(3808,84): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(4831,35): warning C4267: =: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5079,66): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5085,89): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5086,101): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5087,89): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5088,101): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5089,89): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5090,101): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5091,84): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5283,5): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5307,13): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5343,66): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5360,5): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5382,61): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5413,61): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5529,61): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\lodepng.cpp(5610,35): warning C4334: <<: результат 32-разрядного смещения неявно преобразуется в 64-разрядное значение (предполагалось 64-разрядное смещение?)
+  PixsMerging.cpp
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\PixsMerging.cpp(11,100): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\PixsMerging.cpp(18,100): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+  Создание кода...
+  PixsMerging.vcxproj -> C:\Users\Cortuzz\source\repos\PixsMerging\x64\Debug\PixsMerging.exe

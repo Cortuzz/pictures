@@ -1,0 +1,9 @@
+﻿  PixsMerging.cpp
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\PixsMerging.cpp(11,100): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+C:\Users\Cortuzz\source\repos\PixsMerging\PixsMerging\PixsMerging.cpp(18,100): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+  Создание кода
+  1 of 376 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  PixsMerging.vcxproj -> C:\Users\Cortuzz\source\repos\PixsMerging\x64\Release\PixsMerging.exe
